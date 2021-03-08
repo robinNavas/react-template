@@ -6,11 +6,12 @@
   "scripts": {
     "test": "test",
     "dev": "webpack serve --open --config webpack.dev.js",
-    "buid": "webpack --config webpack.prod.js"
+    "buid": "webpack --config webpack.prod.js",
+    "new-comp": "yo new-react-component"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/robinNavas/react-template.git"
+    "url": "https://github.com/robinNavas/react-template.git"
   },
   "keywords": [
     "react",
@@ -38,6 +39,8 @@
     "react-dom": "^17.0.1",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.2.3",
     "webpack": "^5.24.1",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
