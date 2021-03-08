@@ -9,4 +9,12 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+import TestComponent from "./components/CompoName.jsx";
+
+ReactDOM.render(
+  <div>
+    <App />
+    <TestComponent />
+  </div>,
+  document.querySelector("#root")
+);

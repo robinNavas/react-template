@@ -10,7 +10,7 @@ const nodeFolder = path.resolve(__dirname, "node_modules");
 // if we use yarn
 // const yarnModules = path.resolve(__dirname, '')
 module.exports = {
-  entry: "./src",
+  entry: "./src/index.tsx",
 
   output: {
     filename: "[name].bundle.js",
@@ -32,7 +32,7 @@ module.exports = {
         test: /\.(css|scss)$/,
         exclude: nodeFolder,
         use: [
-          "MiniCssExtractPlugin.loader",
+          MiniCssExtractPlugin.loader,
           "css-loader",
           "sass-loader",
           {
@@ -48,6 +48,11 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         type: "asset/resource"
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        use: "ts-loader",
+        exclude: nodeFolder
       }
     ]
   },
@@ -60,5 +65,7 @@ module.exports = {
     new MiniCssExtractPlugin()
   ],
 
-  resolve: {}
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"]
+  }
 };
