@@ -1,6 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+declare namespace JSX {
+  interface ElementClass {
+    render: any;
+  }
+}
+
+let user :Number;
+user = 0;
+
 const App = () => {
   return (
     <div>

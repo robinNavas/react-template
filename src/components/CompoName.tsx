@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "./CompoName_Style.scss";
+//import Styles from "./CompoName_Style.scss";
 
 export default class CompoName extends React.Component {
   constructor(props) {
