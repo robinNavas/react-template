@@ -1,15 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-declare namespace JSX {
-  interface ElementClass {
-    render: any;
-  }
-}
-
-let user :Number;
-user = 0;
-
 const App = () => {
   return (
     <div>
@@ -18,12 +9,12 @@ const App = () => {
   );
 };
 
-import TestComponent from "./components/CompoName.jsx";
+import TestComponent from "./components/CompoName";
 
 ReactDOM.render(
   <div>
     <App />
-    <TestComponent />
+    <TestComponent firstProp={15}/>
   </div>,
   document.querySelector("#root")
 );

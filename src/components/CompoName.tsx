@@ -1,10 +1,16 @@
+
 import React from "react";
 //import Styles from "./CompoName_Style.scss";
+interface MyProps {
+    fuck: Number,
+    width?: Number
+}
 
-export default class CompoName extends React.Component {
-  constructor(props) {
+console.log(React.Component);
+
+export default class CompoName extends React.Component<MyProps> {
+  constructor(props:MyProps) {
     super(props);
-
     this.state = {};
   }
 
