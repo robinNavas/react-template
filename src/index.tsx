@@ -14,7 +14,7 @@ import TestComponent from "./components/CompoName";
 ReactDOM.render(
   <div>
     <App />
-    <TestComponent firstProp={15}/>
+    <TestComponent firstProp={15}/> 
   </div>,
   document.querySelector("#root")
 );
