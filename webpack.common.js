@@ -1,71 +1,36 @@
+const header = require("./settings/headers.js");
+
 //  Les imports relatifs à webpack
-const path = require("path");
+const path = header.path;
 
-//  Les plugins
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+//  Les règle dont va se servir
+const modules = require("./settings/modules.js");
 
-//  On définit les dossiers à exclure
-const nodeFolder = path.resolve(__dirname, "node_modules");
 // if we use yarn
 // const yarnModules = path.resolve(__dirname, '')
+
 module.exports = {
   entry: "./src/index.tsx",
 
   output: {
     filename: "[name].bundle.js",
 
-    path: path.resolve(__dirname, "dist"),
+    path: header.path.resolve(__dirname, "dist"),
 
     clean: true
   },
 
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: nodeFolder,
-        use: "babel-loader",
-        enforce: "pre"
-      },
-      {
-        test: /\.(css|scss)$/,
-        exclude: nodeFolder,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [["postcss-preset-env", {}]]
-              }
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
-        type: "asset/resource"
-      },
-      {
-        test: /\.(ts|tsx)$/,
-        use: "ts-loader",
-        exclude: nodeFolder
-      }
-    ]
-  },
+  module: modules,
 
   plugins: [
-    new HtmlWebpackPlugin({
+    new header.plugins.HtmlWebpackPlugin({
       title: "Webpack Template Youhou",
       template: "src/page/template.ejs"
     }),
-    new MiniCssExtractPlugin()
+    new header.plugins.MiniCssExtractPlugin()
   ],
 
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    extensions: [".tsx", ".ts", ".js", ".jsx"]
   }
 };
