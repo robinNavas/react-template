@@ -1,0 +1,10 @@
+
+// export all variables
+@use "_baseUnit.scss" ;
+@use "_colors.scss" ;
+@use "_font.scss" ;
+@use "_layout.scss" ;
+
+body{
+  background-color: var(--c_primary);
+}
