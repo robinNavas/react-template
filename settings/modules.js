@@ -9,6 +9,11 @@ module.exports = {
       enforce: "pre"
     },
     {
+      test: /\.(ts|tsx)$/,
+      use: "ts-loader",
+      exclude: header.exclude
+    },
+    {
       test: /\.(css|scss)$/,
       exclude: header.exclude,
       use: [
@@ -30,9 +35,8 @@ module.exports = {
       type: "asset/resource"
     },
     {
-      test: /\.(ts|tsx)$/,
-      use: "ts-loader",
-      exclude: header.exclude
+      test: /\.(ttf|otf|woff|woff2)$/,
+      type: "asset/resource"
     }
   ]
 };

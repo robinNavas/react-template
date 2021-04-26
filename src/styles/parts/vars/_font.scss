@@ -1,8 +1,7 @@
-/*
 
 @font-face {
-    font-family: "myFont";
-    src: url("my/font/url.ttf") type("truetype");
-}
-
-*/
+    font-family: "rubik";
+    src: url("~fonts/rubik/webfonts/rubik-regular.woff") format("woff"),
+    url("~fonts/rubik/webfonts/rubik-regular.woff2") format("woff2"),
+    url("~fonts/rubik/Rubik-Regular.ttf") format("truetype"),
+};
