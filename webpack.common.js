@@ -31,6 +31,11 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: [".tsx", ".ts", ".js", ".jsx"]
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
+    alias:{
+      style: path.resolve(__dirname, "src/styles"),
+      assets: path.resolve(__dirname, "src/static"),
+      fonts: path.resolve(__dirname, "src/static/fonts")
+    }
   }
 };
